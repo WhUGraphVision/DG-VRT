@@ -1,0 +1,31 @@
+CONFIG_NAME: 'attn2-dcgan'
+
+DATASET_NAME: 'birds'
+DATA_DIR: '/mnt/data/AttnGAN-master-v2/data/birds'
+GPU_ID: 3
+WORKERS: 1
+
+B_VALIDATION: True
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    FLAG: False
+    NET_G: '/mnt/data/AttnGMAN-Mode-Seeking/output/birds_attn2-dcgan_2019_08_08_02_30_24/Model/netG_epoch_400.pth'
+    B_NET_D: False
+    BATCH_SIZE: 50
+    NET_E: '/mnt/data/AttnGAN-master-v1/DAMSMencoders/bird/text_encoder550.pth'
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 0
+    B_DCGAN: True
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 10
+    WORDS_NUM: 25
